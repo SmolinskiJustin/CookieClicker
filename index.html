@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
-    <script href="cookieclicker.js"></script>
     <title>Cookie Clicker | Team Chocolate Chip</title>
 </head>
 <body>
@@ -14,24 +13,26 @@
         <h1>Cookie Clicker!</h1>
         <h2>Cookie count: <span id="cookieCount"></span></h2>
     </header>
-    <section class="cookie"></section>
+    <section class="cookie">
+        <img id="cookieButton" src="images/cookieButton.png" alt="chocolate chip cookie button">
+    </section>
     <section class="upgrades">
         <div class="grid-container">
             <h2>Active</h2>
             <h2>Upgrades</h2>
             <h2>Passive</h2>
-            <h3>Double-Click:&nbsp;<span class="upgradePrice">250 Clicks</span></h3>
+            <h3 id="#activeUpgrade1">Double-Click:&nbsp;<span class="upgradePrice">250 Clicks</span></h3>
             <p></p>
-            <h3>Auto Click:&nbsp;<span class="upgradePrice">5,000 Clicks</span></h3>
-            <h3>Triple-Click:&nbsp;<span class="upgradePrice">1,000 Clicks</span></h3>
+            <h3 id="#passiveUpgrade1">Auto Click:&nbsp;<span class="upgradePrice">5,000 Clicks</span></h3>
+            <h3 id="#activeUpgrade2">Triple-Click:&nbsp;<span class="upgradePrice">1,000 Clicks</span></h3>
             <p></p>
-            <h3>Auto CLick X2:&nbsp;<span class="upgradePrice">30,000 Clicks</span></h3>
-            <h3>Quadruple-Click:&nbsp;<span class="upgradePrice">6,000 Clicks</span></h3>
+            <h3 id="#passiveUpgrade2">Auto Click X2:&nbsp;<span class="upgradePrice">30,000 Clicks</span></h3>
+            <h3 id="#activeUpgrade3">Quadruple-Click:&nbsp;<span class="upgradePrice">6,000 Clicks</span></h3>
             <p></p>
-            <h3>Auto Click X3:&nbsp;<span class="upgradePrice">80,000 Clicks</span></h3>
-            <h3>Quintuple-Click:&nbsp;<span class="upgradePrice">6,000 Clicks</span></h3>
+            <h3 id="#passiveUpgrade3">Auto Click X3:&nbsp;<span class="upgradePrice">80,000 Clicks</span></h3>
+            <h3 id="#activeUpgrade4">Quintuple-Click:&nbsp;<span class="upgradePrice">6,000 Clicks</span></h3>
             <p></p>
-            <h3>Auto Click X4:&nbsp;<span class="upgradePrice">200,000 Clicks</span></h3>
+            <h3 id="#passiveUpgrade4">Auto Click X4:&nbsp;<span class="upgradePrice">200,000 Clicks</span></h3>
         </div>
     </section>
     <script type="module">
@@ -54,6 +55,7 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-    </script>
+        </script>
+        <script src="cookieclicker.js"></script>
 </body>
 </html>
