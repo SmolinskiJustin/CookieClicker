@@ -16,6 +16,11 @@ let passiveUpgrade4Price = 200000;
 cookieButton.addEventListener("click", function(){
     cookieCount++;
     cookieCountDisplay.innerHTML = cookieCount;
+    cookieButton.style.scale = 0.8;
+    window.setTimeout(function(){
+        cookieButton.style.scale = 1.0;
+        
+    }, 75);
 });
 
 // function checkForUpgrades(){

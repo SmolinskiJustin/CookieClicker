@@ -8,19 +8,22 @@
 
 /* Banner Styling */
 header {
-    background-color: rgb(156, 108, 45);
+    background-color: #ffeead;
     width: 100%;
     height: 10vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
     /* color: white; */
-    color: black;
+    color: grey;
+}
+#cookieCount{
+    color: crimson;
 }
 
 /* Cookie Button Styling */
 .cookie {
-    background-color: lightblue;
+    background-color: #96ceb4;
     width: 100%;
     height: 50vh;
     display: flex;
@@ -28,13 +31,13 @@ header {
     align-items: center;
 }
 #cookieButton {
-    border-radius: 50%;
-    box-shadow: 8px 8px rgb(50, 50, 50);
+    /* border-radius: 50%; */
+    /* box-shadow: 8px 8px rgb(50, 50, 50); */
 }
 
 /* Upgrade Window Styling */
 .upgrades {
-    background-color: rgb(156, 108, 45);
+    background-color: #ffeead;
     width: 100%;
     height: 40vh;
     padding: 2em;
@@ -42,7 +45,7 @@ header {
     
 }
 .grid-container > * {
-    border: 2px solid grey;
+    border: 2px solid #ffcc5c;
     /* text-align: center; */
     color: grey;
     display: flex;
@@ -54,9 +57,23 @@ header {
     grid-template-columns: 4fr 1fr 4fr;
     grid-template-rows: 6vh 6vh 6vh 6vh 6vh;
     gap: 0;
-    border: 2px solid grey;
+    border: 2px solid #ffcc5c;
     border-radius: 5px;
 }
 .upgradePrice{
     color: crimson;
+}
+
+#activeUpgrade1{
+    opacity: 0.5;
+}
+#purchase1{
+    opacity: 0.5;
+}
+button{
+    display: none;
+}
+.active{
+    display: flex;
+    justify-content: space-around;
 }
