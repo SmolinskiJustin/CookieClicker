@@ -20,6 +20,11 @@ header {
 #cookieCount{
     color: crimson;
 }
+.cookieCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Cookie Button Styling */
 .cookie {
@@ -42,14 +47,7 @@ header {
     height: 40vh;
     padding: 2em;
     position: fixed;
-    
-}
-.grid-container > * {
-    border: 2px solid #ffcc5c;
-    /* text-align: center; */
-    color: grey;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 .grid-container{
@@ -57,23 +55,83 @@ header {
     grid-template-columns: 4fr 1fr 4fr;
     grid-template-rows: 6vh 6vh 6vh 6vh 6vh;
     gap: 0;
+    width: 80%;
     border: 2px solid #ffcc5c;
     border-radius: 5px;
+}
+.grid-container > * {
+    border: 2px solid #ffcc5c;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 .upgradePrice{
     color: crimson;
 }
-
 #activeUpgrade1{
     opacity: 0.5;
 }
-#purchase1{
+#activeUpgrade2 {
     opacity: 0.5;
 }
-button{
-    display: none;
+#activeUpgrade3 {
+    opacity: 0.5;
 }
-.active{
+#activeUpgrade4 {
+    opacity: 0.5;
+}
+#passiveUpgrade1 {
+    opacity: 0.5;
+}
+#passiveUpgrade2 {
+    opacity: 0.5;
+}
+#passiveUpgrade3 {
+    opacity: 0.5;
+}
+#passiveUpgrade4 {
+    opacity: 0.5;
+}
+
+#purchaseBtn1{
+    opacity: 0.5;
+}
+#purchaseBtn2 {
+    opacity: 0.5;
+}
+#purchaseBtn3 {
+    opacity: 0.5;
+}
+#purchaseBtn4 {
+    opacity: 0.5;
+}
+#purchaseBtn5 {
+    opacity: 0.5;
+}
+#purchaseBtn6 {
+    opacity: 0.5;
+}
+#purchaseBtn7 {
+    opacity: 0.5;
+}
+#purchaseBtn8 {
+    opacity: 0.5;
+}
+
+button{
+    height: 4vh;
+    background-color: #96ceb4;
+    border: 4px solid #ffcc5c;
+    border-radius: 0.75em;
+    padding: 1em;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.cookieIcon{
+    height: auto;
+    width: 1.5em;
 }
