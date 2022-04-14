@@ -23,7 +23,8 @@
             <h2>Passive</h2>
             <div class="upgradeContainer">
                 <h3 id="activeUpgrade1">Double-Click</h3>
-                <button id="purchaseBtn1" disabled><span class="upgradePrice">10&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <button id="purchaseBtn1" onclick="enableActiveUpgrade1()" disabled><span class="upgradePrice">10&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <!-- <input id="purchaseBtn1" type="button" value="<span>100</span>" onclick="enableActiveUpgrade1()" > -->
             </div>
             <div class="indicatorContainer">
                 <img src="" alt="">
@@ -31,58 +32,37 @@
             </div>
             <div class="upgradeContainer">
                 <h3 id="passiveUpgrade1">Auto Click</h3>
-                <button id="purchaseBtn2" disabled><span class="upgradePrice">25&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <button id="purchaseBtn2" onclick="enablePassiveUpgrade1()" disabled><span class="upgradePrice">25&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
             </div>
             <div class="upgradeContainer">
                 <h3 id="activeUpgrade2">Triple-Click</h3>
-                <button id="purchaseBtn3" disabled><span class="upgradePrice">50&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <button id="purchaseBtn3" onclick="enableActiveUpgrade2()" disabled><span class="upgradePrice">50&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
             </div>
             <p></p>
             <div class="upgradeContainer">
                 <h3 id="passiveUpgrade2">Auto Click X2</h3>
-                <button id="purchaseBtn4" disabled><span class="upgradePrice">100&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <button id="purchaseBtn4" onclick="enablePassiveUpgrade2()" disabled><span class="upgradePrice">100&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
             </div>
             <div class="upgradeContainer">
                 <h3 id="activeUpgrade3">Quadruple-Click</h3>
-                <button id="purchaseBtn5" disabled><span class="upgradePrice">250&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <button id="purchaseBtn5" onclick="enableActiveUpgrade3()" disabled><span class="upgradePrice">250&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
             </div>
             <p></p>
             <div class="upgradeContainer">
                 <h3 id="passiveUpgrade3">Auto Click X3</h3>
-                <button id="purchaseBtn6" disabled><span class="upgradePrice">500&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <button id="purchaseBtn6" onclick="enablePassiveUpgrade3()" disabled><span class="upgradePrice">500&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
             </div>
             <div class="upgradeContainer">
                 <h3 id="activeUpgrade4">Quintuple-Click</h3>
-                <button id="purchaseBtn7" disabled><span class="upgradePrice">1,000&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <button id="purchaseBtn7" onclick="enableActiveUpgrade4()" disabled><span class="upgradePrice">1,000&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
             </div>
             <p></p>
             <div class="upgradeContainer">
                 <h3 id="passiveUpgrade4">Auto Click X4</h3>
-                <button id="purchaseBtn8" disabled><span class="upgradePrice">2,000&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
+                <button id="purchaseBtn8" onclick="enablePassiveUpgrade4()" disabled><span class="upgradePrice">2,000&nbsp;</span><img class="cookieIcon" src="images/cookieButton.png" alt="chocolate chip cookie icon"></button>
             </div>
         </div>
     </section>
-    <!-- <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyCdW4iogKGkB18Rhz5fKiFVCflgj2Db68c",
-            authDomain: "cookie-clicker-dd254.firebaseapp.com",
-            projectId: "cookie-clicker-dd254",
-            storageBucket: "cookie-clicker-dd254.appspot.com",
-            messagingSenderId: "788752673665",
-            appId: "1:788752673665:web:7bcfc8d01d25bfb7989680",
-            measurementId: "G-1MQG2TSS8R"
-        };
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        </script> -->
-        <script src="cookieclicker.js"></script>
+    <script src="cookieclicker.js"></script>
 </body>
 </html>

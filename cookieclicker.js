@@ -125,8 +125,71 @@ function disableUpgradeCSS() {
     purchaseBtn8.disabled = true;
 };
 
-function activeUpgrade1(){
+function enableActiveUpgrade1(){
+    cookieCount -= activeUpgrade1Price;
+    cookieCountDisplay.innerHTML = cookieCount;
     cookiesPerClick++;
+    disableUpgradeCSS();
+    checkForUpgrades();
+};
+function enableActiveUpgrade2() {
+    cookieCount -= activeUpgrade2Price;
+    cookieCountDisplay.innerHTML = cookieCount;
+    cookiesPerClick++;
+    disableUpgradeCSS();
+    checkForUpgrades();
+};
+function enableActiveUpgrade3() {
+    cookieCount -= activeUpgrade3Price;
+    cookieCountDisplay.innerHTML = cookieCount;
+    cookiesPerClick++;
+    disableUpgradeCSS();
+    checkForUpgrades();
+};
+function enableActiveUpgrade4() {
+    cookieCount -= activeUpgrade4Price;
+    cookieCountDisplay.innerHTML = cookieCount;
+    cookiesPerClick++;
+    disableUpgradeCSS();
+    checkForUpgrades();
+};
+function enablePassiveUpgrade1() {
+    cookieCount -= passiveUpgrade1Price;
+    cookieCountDisplay.innerHTML = cookieCount;
+    setInterval(function(){
+        cookieCount += 1;
+        cookieCountDisplay.innerHTML = cookieCount;
+    }, 1000);
+    disableUpgradeCSS();
+    checkForUpgrades();
+};
+function enablePassiveUpgrade2() {
+    cookieCount -= passiveUpgrade2Price;
+    cookieCountDisplay.innerHTML = cookieCount;
+    setInterval(function () {
+        cookieCount += 2;
+        cookieCountDisplay.innerHTML = cookieCount;
+    }, 1000);
+    disableUpgradeCSS();
+    checkForUpgrades();
+};
+function enablePassiveUpgrade3() {
+    cookieCount -= passiveUpgrade3Price;
+    cookieCountDisplay.innerHTML = cookieCount;
+    setInterval(function () {
+        cookieCount += 3;
+        cookieCountDisplay.innerHTML = cookieCount;
+    }, 1000);
+    disableUpgradeCSS();
+    checkForUpgrades();
+};
+function enablePassiveUpgrade4() {
+    cookieCount -= passiveUpgrade4Price;
+    cookieCountDisplay.innerHTML = cookieCount;
+    setInterval(function () {
+        cookieCount += 4;
+        cookieCountDisplay.innerHTML = cookieCount;
+    }, 1000);
     disableUpgradeCSS();
     checkForUpgrades();
 };
