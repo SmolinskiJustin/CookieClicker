@@ -1,5 +1,6 @@
 //game variables
 let cookieCount = 0;
+let cookiesPerSecond = 0;
 let cookieButton = document.querySelector("#cookieButton");
 let cookieCountDisplay = document.querySelector("#cookieCount");
 cookieCountDisplay.innerHTML = 0;
@@ -35,10 +36,46 @@ let purchaseBtn6 = document.querySelector("#purchaseBtn6");
 let purchaseBtn7 = document.querySelector("#purchaseBtn7");
 let purchaseBtn8 = document.querySelector("#purchaseBtn8");
 
+//upgrade indicator icon DOM objects
+let activeUpgrade1Indicator = document.querySelector("#activeUpgrade1Indicator");
+let activeUpgrade2Indicator = document.querySelector("#activeUpgrade2Indicator");
+let activeUpgrade3Indicator = document.querySelector("#activeUpgrade3Indicator");
+let activeUpgrade4Indicator = document.querySelector("#activeUpgrade4Indicator");
+let passiveUpgrade1Indicator = document.querySelector("#passiveUpgrade1Indicator");
+let passiveUpgrade2Indicator = document.querySelector("#passiveUpgrade2Indicator");
+let passiveUpgrade3Indicator = document.querySelector("#passiveUpgrade3Indicator");
+let passiveUpgrade4Indicator = document.querySelector("#passiveUpgrade4Indicator");
+
+activeUpgrade1Indicator.style.display = "none";
+activeUpgrade2Indicator.style.display = "none";
+activeUpgrade3Indicator.style.display = "none";
+activeUpgrade4Indicator.style.display = "none";
+passiveUpgrade1Indicator.style.display = "none";
+passiveUpgrade2Indicator.style.display = "none";
+passiveUpgrade3Indicator.style.display = "none";
+passiveUpgrade4Indicator.style.display = "none";
+
+//disable upgrade variables
+let isActiveUpgrade1Disabled = false;
+let isActiveUpgrade2Disabled = false;
+let isActiveUpgrade3Disabled = false;
+let isActiveUpgrade4Disabled = false;
+let isPassiveUpgrade1Disabled = false;
+let isPassiveUpgrade2Disabled = false;
+let isPassiveUpgrade3Disabled = false;
+let isPassiveUpgrade4Disabled = false;
+
+window.setInterval(function(){
+    if(cookiesPerSecond > 0) {
+        cookieCount += (cookiesPerSecond / 10);
+    };
+    cookieCountDisplay.innerHTML = parseInt(cookieCount);
+}, 100);
+
 //cookie button event listener runs game mechanics. game sits idle waiting for cookie button click
 cookieButton.addEventListener("click", function(){
     cookieCount += cookiesPerClick;
-    cookieCountDisplay.innerHTML = cookieCount;
+    cookieCountDisplay.innerHTML = parseInt(cookieCount);
     checkForUpgrades();
     cookieButton.style.scale = 0.8;
     window.setTimeout(function(){
@@ -48,42 +85,42 @@ cookieButton.addEventListener("click", function(){
 
 //checks cookie count balance and unlocks available upgrades
 function checkForUpgrades() {
-    if (cookieCount >= activeUpgrade1Price) {
+    if (cookieCount >= activeUpgrade1Price && isActiveUpgrade1Disabled == false) {
         activeUpgrade1.style.opacity = 1.0;
         purchaseBtn1.style.opacity = 1.0;
         purchaseBtn1.disabled = false;
     };
-    if (cookieCount >= activeUpgrade2Price) {
+    if (cookieCount >= activeUpgrade2Price && isActiveUpgrade2Disabled == false) {
         activeUpgrade2.style.opacity = 1.0;
         purchaseBtn3.style.opacity = 1.0;
         purchaseBtn3.disabled = false;
     };
-    if (cookieCount >= activeUpgrade3Price) {
+    if (cookieCount >= activeUpgrade3Price && isActiveUpgrade3Disabled == false) {
         activeUpgrade3.style.opacity = 1.0;
         purchaseBtn5.style.opacity = 1.0;
         purchaseBtn5.disabled = false;
     };
-    if (cookieCount >= activeUpgrade4Price) {
+    if (cookieCount >= activeUpgrade4Price && isActiveUpgrade4Disabled == false) {
         activeUpgrade4.style.opacity = 1.0;
         purchaseBtn7.style.opacity = 1.0;
         purchaseBtn7.disabled = false;
     };
-    if (cookieCount >= passiveUpgrade1Price) {
+    if (cookieCount >= passiveUpgrade1Price && isPassiveUpgrade1Disabled == false) {
         passiveUpgrade1.style.opacity = 1.0;
         purchaseBtn2.style.opacity = 1.0;
         purchaseBtn2.disabled = false;
     };
-    if (cookieCount >= passiveUpgrade2Price) {
+    if (cookieCount >= passiveUpgrade2Price && isPassiveUpgrade2Disabled == false) {
         passiveUpgrade2.style.opacity = 1.0;
         purchaseBtn4.style.opacity = 1.0;
         purchaseBtn4.disabled = false;
     };
-    if (cookieCount >= passiveUpgrade3Price) {
+    if (cookieCount >= passiveUpgrade3Price && isPassiveUpgrade3Disabled == false) {
         passiveUpgrade3.style.opacity = 1.0;
         purchaseBtn6.style.opacity = 1.0;
         purchaseBtn6.disabled = false;
     };
-    if (cookieCount >= passiveUpgrade4Price) {
+    if (cookieCount >= passiveUpgrade4Price && isPassiveUpgrade4Disabled == false) {
         passiveUpgrade4.style.opacity = 1.0;
         purchaseBtn8.style.opacity = 1.0;
         purchaseBtn8.disabled = false;
@@ -125,71 +162,67 @@ function disableUpgradeCSS() {
     purchaseBtn8.disabled = true;
 };
 
-function enableActiveUpgrade1(){
-    cookieCount -= activeUpgrade1Price;
-    cookieCountDisplay.innerHTML = cookieCount;
-    cookiesPerClick++;
+//updates cookie balance display, disables all upgrades then re-enables the affordable upgrades. used by all upgrade functions.
+function upgradeLogic(){
+    cookieCountDisplay.innerHTML = parseInt(cookieCount);
     disableUpgradeCSS();
     checkForUpgrades();
+};
+
+//enables upgrades and indicators and assigns 
+function enableActiveUpgrade1(){
+    isActiveUpgrade1Disabled = true;
+    activeUpgrade1Indicator.style.display = "block";
+    cookieCount -= activeUpgrade1Price;
+    cookiesPerClick++;
+    upgradeLogic();
 };
 function enableActiveUpgrade2() {
+    isActiveUpgrade2Disabled = true;
+    activeUpgrade2Indicator.style.display = "block";
     cookieCount -= activeUpgrade2Price;
-    cookieCountDisplay.innerHTML = cookieCount;
-    cookiesPerClick++;
-    disableUpgradeCSS();
-    checkForUpgrades();
+    cookiesPerClick +=2 ;
+    upgradeLogic();
 };
 function enableActiveUpgrade3() {
+    isActiveUpgrade3Disabled = true;
+    activeUpgrade3Indicator.style.display = "block";
     cookieCount -= activeUpgrade3Price;
-    cookieCountDisplay.innerHTML = cookieCount;
-    cookiesPerClick++;
-    disableUpgradeCSS();
-    checkForUpgrades();
+    cookiesPerClick += 3;
+    upgradeLogic();
 };
 function enableActiveUpgrade4() {
+    isActiveUpgrade4Disabled = true;
+    activeUpgrade4Indicator.style.display = "block";
     cookieCount -= activeUpgrade4Price;
-    cookieCountDisplay.innerHTML = cookieCount;
-    cookiesPerClick++;
-    disableUpgradeCSS();
-    checkForUpgrades();
+    cookiesPerClick += 4;
+    upgradeLogic();
 };
 function enablePassiveUpgrade1() {
+    isPassiveUpgrade1Disabled = true;
+    passiveUpgrade1Indicator.style.display = "block";
+    cookiesPerSecond += 1;
     cookieCount -= passiveUpgrade1Price;
-    cookieCountDisplay.innerHTML = cookieCount;
-    setInterval(function(){
-        cookieCount += 1;
-        cookieCountDisplay.innerHTML = cookieCount;
-    }, 1000);
-    disableUpgradeCSS();
-    checkForUpgrades();
+    upgradeLogic();
 };
 function enablePassiveUpgrade2() {
+    isPassiveUpgrade2Disabled = true;
+    passiveUpgrade2Indicator.style.display = "block";
+    cookiesPerSecond += 2;
     cookieCount -= passiveUpgrade2Price;
-    cookieCountDisplay.innerHTML = cookieCount;
-    setInterval(function () {
-        cookieCount += 2;
-        cookieCountDisplay.innerHTML = cookieCount;
-    }, 1000);
-    disableUpgradeCSS();
-    checkForUpgrades();
+    upgradeLogic();
 };
 function enablePassiveUpgrade3() {
+    isPassiveUpgrade3Disabled = true;
+    passiveUpgrade3Indicator.style.display = "block";
+    cookiesPerSecond += 3;
     cookieCount -= passiveUpgrade3Price;
-    cookieCountDisplay.innerHTML = cookieCount;
-    setInterval(function () {
-        cookieCount += 3;
-        cookieCountDisplay.innerHTML = cookieCount;
-    }, 1000);
-    disableUpgradeCSS();
-    checkForUpgrades();
+    upgradeLogic();
 };
 function enablePassiveUpgrade4() {
+    isPassiveUpgrade4Disabled = true;
+    passiveUpgrade4Indicator.style.display = "block";
+    cookiesPerSecond += 4;
     cookieCount -= passiveUpgrade4Price;
-    cookieCountDisplay.innerHTML = cookieCount;
-    setInterval(function () {
-        cookieCount += 4;
-        cookieCountDisplay.innerHTML = cookieCount;
-    }, 1000);
-    disableUpgradeCSS();
-    checkForUpgrades();
+    upgradeLogic();
 };

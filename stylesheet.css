@@ -52,7 +52,7 @@ header {
 .grid-container{
     display: grid;
     grid-template-columns: 4fr 1fr 4fr;
-    grid-template-rows: 6vh 6vh 6vh 6vh 6vh;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 0;
     width: 80%;
     border: 2px solid #ffcc5c;
@@ -64,6 +64,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+.indicatorContainer {
+    display: flex;
+}
+.indicatorContainer > div {
+    border: 1px solid #ffcc5c;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 button {
     height: 4vh;
