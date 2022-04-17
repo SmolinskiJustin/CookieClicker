@@ -70,6 +70,7 @@ window.setInterval(function(){
         cookieCount += (cookiesPerSecond / 10);
     };
     cookieCountDisplay.innerHTML = parseInt(cookieCount);
+    checkForUpgrades();
 }, 100);
 
 //cookie button event listener runs game mechanics. game sits idle waiting for cookie button click
@@ -163,14 +164,14 @@ function disableUpgradeCSS() {
 };
 
 //updates cookie balance display, disables all upgrades then re-enables the affordable upgrades. used by all upgrade functions.
-function upgradeLogic(){
+function upgradeLogic() {
     cookieCountDisplay.innerHTML = parseInt(cookieCount);
     disableUpgradeCSS();
     checkForUpgrades();
 };
 
 //enables upgrades and indicators and assigns 
-function enableActiveUpgrade1(){
+function enableActiveUpgrade1() {
     isActiveUpgrade1Disabled = true;
     activeUpgrade1Indicator.style.display = "block";
     cookieCount -= activeUpgrade1Price;
@@ -181,21 +182,21 @@ function enableActiveUpgrade2() {
     isActiveUpgrade2Disabled = true;
     activeUpgrade2Indicator.style.display = "block";
     cookieCount -= activeUpgrade2Price;
-    cookiesPerClick +=2 ;
+    cookiesPerClick ++;
     upgradeLogic();
 };
 function enableActiveUpgrade3() {
     isActiveUpgrade3Disabled = true;
     activeUpgrade3Indicator.style.display = "block";
     cookieCount -= activeUpgrade3Price;
-    cookiesPerClick += 3;
+    cookiesPerClick ++;
     upgradeLogic();
 };
 function enableActiveUpgrade4() {
     isActiveUpgrade4Disabled = true;
     activeUpgrade4Indicator.style.display = "block";
     cookieCount -= activeUpgrade4Price;
-    cookiesPerClick += 4;
+    cookiesPerClick ++;
     upgradeLogic();
 };
 function enablePassiveUpgrade1() {
