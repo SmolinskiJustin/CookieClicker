@@ -1,10 +1,12 @@
 //game variables
 let cookieCount = 0;
 let cookiesPerSecond = 0;
-let cookieButton = document.querySelector("#cookieButton");
+let cookiesPerClick = 1;
+
+//game I/O DOM objects
 let cookieCountDisplay = document.querySelector("#cookieCount");
 cookieCountDisplay.innerHTML = 0;
-let cookiesPerClick = 1;
+let cookieButton = document.querySelector("#cookieButton");
 
 //upgrade price variables
 let activeUpgrade1Price = 10;
@@ -65,6 +67,7 @@ let isPassiveUpgrade2Disabled = false;
 let isPassiveUpgrade3Disabled = false;
 let isPassiveUpgrade4Disabled = false;
 
+//Interval updates cookieCount every 1/10 second for smoother display updates
 window.setInterval(function(){
     if(cookiesPerSecond > 0) {
         cookieCount += (cookiesPerSecond / 10);
@@ -202,28 +205,28 @@ function enableActiveUpgrade4() {
 function enablePassiveUpgrade1() {
     isPassiveUpgrade1Disabled = true;
     passiveUpgrade1Indicator.style.display = "block";
-    cookiesPerSecond += 1;
+    cookiesPerSecond++;
     cookieCount -= passiveUpgrade1Price;
     upgradeLogic();
 };
 function enablePassiveUpgrade2() {
     isPassiveUpgrade2Disabled = true;
     passiveUpgrade2Indicator.style.display = "block";
-    cookiesPerSecond += 2;
+    cookiesPerSecond++;
     cookieCount -= passiveUpgrade2Price;
     upgradeLogic();
 };
 function enablePassiveUpgrade3() {
     isPassiveUpgrade3Disabled = true;
     passiveUpgrade3Indicator.style.display = "block";
-    cookiesPerSecond += 3;
+    cookiesPerSecond++;
     cookieCount -= passiveUpgrade3Price;
     upgradeLogic();
 };
 function enablePassiveUpgrade4() {
     isPassiveUpgrade4Disabled = true;
     passiveUpgrade4Indicator.style.display = "block";
-    cookiesPerSecond += 4;
+    cookiesPerSecond++;
     cookieCount -= passiveUpgrade4Price;
     upgradeLogic();
 };
